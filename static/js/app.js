@@ -31,64 +31,82 @@ var filters = {};
 function updateFilters() {
 
     // 4a. Save the element that was changed as a variable.
-      let date = d3.select("#datetime");
-      let city = d3.select("#city");
-      let state = d3.select("#state");
-      let country = d3.select("#country");
-      let shape = d3.select("#shape");
+      
+    let changedElement = d3.select(this);
+   
+        // let date = d3.select("#datetime");
+      // let city = d3.select("#city");
+      // let state = d3.select("#state");
+      // let country = d3.select("#country");
+      // let shape = d3.select("#shape");
 
     // 4b. Save the value that was changed as a variable.
-      let datec = date.property("value");
-      let cityc = city.property("value");
-      let statec = state.property("value");
-      let countryc = country.property("value");
-      let shapec = shape.property("value");
+    
+    let elementValue = changedElement.property("value");
+    console.log(elementValue);
+
+    
+      // let datec = date.property("value");
+      // let cityc = city.property("value");
+      // let statec = state.property("value");
+      // let countryc = country.property("value");
+      // let shapec = shape.property("value");
 
     // 4c. Save the id of the filter that was changed as a variable.
 
-      let datecid = date.attr("id");
-      let citycid = city.attr("id");
-      let statecid = state.attr("id");
-      let countrycid = country.attr("id");
-      let shapecid = shape.attr("id");
+    let filterId = changedElement.attr("id");
+    console.log(filterId);
+
+      // let datecid = date.attr("id");
+      // let citycid = city.attr("id");
+      // let statecid = state.attr("id");
+      // let countrycid = country.attr("id");
+      // let shapecid = shape.attr("id");
 
     // 5. If a filter value was entered then add that filterId and value
     // to the filters list. Otherwise, clear that filter from the filters object.
  
-      if (datec) {
-        filters[datecid] = datec;
-      }
-      else {
-        delete filters[datecid];
-      }
+    if(elementValue) {
+      filters[filterId] = elementValue;
+    }
+    else {
+      delete filters[filterId];
+    }
+  
+      // if (datec) {
+      //   filters[datecid] = datec;
+      // }
+      // else {
+      //   delete filters[datecid];
+      // }
 
-      if (cityc) {
-        filters[citycid] = cityc;
-      }
-      else {
-        delete filters[citycid];
-      }
+      // if (cityc) {
+      //   filters[citycid] = cityc;
+      // }
+      // else {
+      //   delete filters[citycid];
+      // }
 
-      if (statec) {
-        filters[statecid] = statec;
-      }
-      else {
-        delete filters[statecid];
-      }
+      // if (statec) {
+      //   filters[statecid] = statec;
+      // }
+      // else {
+      //   delete filters[statecid];
+      // }
 
-      if (countryc) {
-        filters[countrycid] = countryc;
-      }
-      else {
-        delete filters[countrycid];
-      }
+      // if (countryc) {
+      //   filters[countrycid] = countryc;
+      // }
+      // else {
+      //   delete filters[countrycid];
+      // }
 
-      if (shapec) {
-        filters[shapecid] = shapec;
-      }
-      else {
-        delete filters[shapecid];
-      }
+      // if (shapec) {
+      //   filters[shapecid] = shapec;
+      // }
+      // else {
+      //   delete filters[shapecid];
+      // }
 
     // 6. Call function to apply all filters and rebuild the table
     filterTable();
