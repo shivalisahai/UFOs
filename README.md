@@ -59,4 +59,4 @@ While the search allows the user to filter the available data on multiple criter
   - If filter entered is outside the range of the available data a message should be returned saying this.
   - Additionally, the range of available data can also be provided to the user for fields having limited data variety like date, shape & country.
   - Since there is no search button it might be a good idea to tell users to hit "Enter" to search.
-  - The search criteria only matches the exact search phrase there is no possibility to catch or eliminate spaces or upper case phrases. This can be incorporated in future versions.
+  - The search criteria only matches the exact search phrase, there is no possibility to catch or eliminate spaces or upper case phrases. This can be incorporated in future versions.
